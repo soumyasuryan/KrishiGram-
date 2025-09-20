@@ -1,103 +1,57 @@
 import Image from "next/image";
+import NavBar from "./components/navbar";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div>
+      <div>
+        <div id="homeContainer" className="h-180 mb-10 w-auto"> 
+          <NavBar></NavBar>
+          <div className="md:mt-20 mt-80 flex flex-col justify-center items-center text-white">
+            <h1 className="md:text-[60px] text-4xl font-bold text-center">Empowering Farmers with AI</h1>
+            <h3 className="md:text-2xl text-md text-center">Do Smarter Farming through predictive Analytics</h3>
+            <a href="" className="mt-10 border-2 border-white sm:p-5 p-3 rounded-xl bg-gray-900/60 md:text-lg text-md hover:bg-gray-900/70 font-bold">Get Started</a>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <div>
+          <h1 className="text-center font-bold text-4xl m-10 mb-5">Features</h1>
+          <ul className="flex xl:flex-row flex-col justify-center items-center xl:justify-around xl:mb-20">
+            <li className="xl:border-0 shadow-2xl pb-10 m-10 hover:scale-110 ease-in-out duration-500 h-auto xl:w-110 w-90 md:w-150 rounded-3xl smooth transition-all border-black  text-center flex flex-col items-center">
+              <Image className="xl:mx-auto xl:w-auto w-50" src="/weather_pred.svg" alt="Weather Forecasting" width={300} height={200} />
+              <h2 className="text-xl font-bold">Weather Forecasting</h2>
+              <p className="text-gray-600 mb-7 w-70 xl:w-90">Get current weather details and predictive weather insights for your local area helping farmers stay a step ahead.</p>
+              <a className="p-3 bg-green-600 text-white rounded-xl text-xl mt-4" href="">Use Now</a>
+            </li>
+            <li className="xl:border-0 shadow-2xl pb-10 m-10 hover:scale-110 ease-in-out duration-500 h-auto xl:w-110 w-90 md:w-150 rounded-3xl smooth transition-all border-black  text-center flex flex-col items-center">
+              <Image className="xl:mx-auto xl:w-auto w-50" src="/crop_rec.svg" alt="Crop Recommendation" width={300} height={200} />
+              <h2 className="text-xl font-bold">Crop Recommendation</h2>
+              <p className="text-gray-600 mb-7 w-70 xl:w-90">Give us details of your soil,your local climate.We will suggest the best suited crop for your lovely fields.</p>
+              <a className="p-3 bg-green-600 text-white rounded-xl text-xl mt-4" href="">Use Now</a>
+            </li>
+            <li className="xl:border-0 shadow-2xl pb-10 m-10 hover:scale-110 ease-in-out duration-500 h-auto xl:w-110 w-90 md:w-150 rounded-3xl smooth transition-all border-black  text-center flex flex-col items-center">
+              <Image className="xl:mx-auto xl:w-auto w-50" src="/fertilizer_rec.svg" alt="Fertilizer Recommendation" width={300} height={200} />
+              <h2 className="text-xl font-bold">Fertilizer Recommendation</h2>
+              <p className="text-gray-600 mb-7 w-70 xl:w-90">We recommend the best suited fertilizer for your crop considering your local climatic conditions ensuring crop health.</p>
+              <a className="p-3 bg-green-600 text-white rounded-xl text-xl mt-4" href="">Use Now</a>
+            </li>
+            </ul>
+            <ul className="flex xl:flex-row flex-col justify-center items-center xl:justify-around xl:w-280 m-auto">
+            <li className="xl:border-0 shadow-2xl m-10 hover:scale-110 ease-in-out duration-500 h-auto flex xl:w-110 w-90 md:w-150 flex-col pb-10 rounded-3xl items-center smooth transition-all">
+              <Image className="xl:mx-auto xl:w-auto w-50" src="/pest_detection.svg" alt="Pest Detection" width={300} height={200} />
+              <h2 className="text-xl font-bold">Pest Detection</h2>
+              <p className="text-gray-600 mb-7 w-70 xl:w-90 text-center w-90">Upload the image of any pest or abnormality you see in your crop we will help you in detecting the problem.</p>
+              <a className="p-3 bg-green-600 text-white rounded-xl text-xl mt-4" href="">Use Now</a>
+            </li>
+            <li className="xl:border-0 shadow-2xl m-10 hover:scale-110 ease-in-out duration-500 h-auto flex xl:w-110 w-90 md:w-150 flex-col pb-10 rounded-3xl items-center smooth transition-all">
+              <Image className="xl:mx-auto xl:w-auto w-50" src="/market_price1.svg" alt="Market Price" width={300} height={200} />
+              <h2 className="text-xl font-bold">Market Price</h2>
+              <p className="text-gray-600 mb-7 w-70 xl:w-90 text-center w-90">Farmer can know the current highest and lowest prices for their respective crops in their near by Mandi .</p>
+              <a className="p-3 bg-green-600 text-white rounded-xl text-xl mt-4" href="">Use Now</a>
+            </li>
+            {/* ...other list items */}
+          </ul>
+        </div>
+      </div>
     </div>
   );
 }
