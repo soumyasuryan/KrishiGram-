@@ -1,7 +1,42 @@
 @import "tailwindcss";
 
+body{
+  
+
+}
+
 #homeContainer{
   background-image: url('/bg-img.jpg');
   background-size: cover;
   background-attachment: fixed;
+}
+#crop_rec_container {
+  background-image: url('/crop_rec_bg.png');
+  background-repeat: no-repeat; 
+
+    
+  /* background-position: center center; Center the image */
+  /* background-size: contain;           Scale image to fit container fully without cropping */
+  /* or */
+  /* background-size: cover; */       /* Scale image to cover container, may crop */
+  /* background-attachment: fixed; */ /* Optional: keep bg fixed on scroll */
+}
+
+
+.component-container {
+  background-image: url('/components_bg_2.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  min-height: 100vh; /* ensure container fills viewport height */
+}
+.component-container2 {
+  background-image: url('/crop_rec_bg.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh; /* ensure container fills viewport height */
 }
