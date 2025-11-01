@@ -1,5 +1,6 @@
 "use client";
 import NavBar from "../components/navbar2";
+import Footer from "../components/footer";
 import { useState } from "react";
 
 export default function Home() {
@@ -210,6 +211,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <Footer></Footer>
     </div>
   );
 }

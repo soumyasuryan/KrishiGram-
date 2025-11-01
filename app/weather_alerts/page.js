@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import NavBar from "../components/navbar2";
+import Footer from "../components/footer";
 import { useState } from "react";
 
 export default function Home() {
@@ -47,7 +48,8 @@ export default function Home() {
   };
 
   return (
-    <div className="component-container w-[100%] pb-50">
+    <div className="component-container">
+    <div className=" w-[100%] pb-50">
       <div className="pb-10 md:w-220 flex flex-col items-center justify-center md:mx-auto">
         <div
           id="crop_rec_container"
@@ -175,6 +177,9 @@ export default function Home() {
         </div>
       </div>
     </div>
+    <Footer></Footer>
+    </div>
+
   );
 }
 
