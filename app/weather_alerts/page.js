@@ -21,7 +21,7 @@ export default function Home() {
     setWeatherData(null);
     try {
       const response = await fetch(
-        `http://localhost:5000/weather?city=${encodeURIComponent(location)}`
+        `http://localhost:8080/weather?city=${encodeURIComponent(location)}`
       );
       console.log(response);
       if (!response.ok) throw new Error("Failed to fetch weather data");
@@ -48,17 +48,17 @@ export default function Home() {
 
   return (
     <div className="component-container w-[100%] pb-50">
-      <div className="pb-10 w-220 flex flex-col items-center justify-center md:mx-auto">
+      <div className="pb-10 md:w-220 flex flex-col items-center justify-center md:mx-auto">
         <div
           id="crop_rec_container"
-          className="w-[90%] md:w-170 xl:w-200 shadow-2xl h-auto md:mx-auto rounded-xl mb-20 flex flex-col justify-center mt-10 min-h-100 bg-white pb-20"
+          className="md:w-[90%] w-[96%] md:w-170 xl:w-200 shadow-2xl h-auto md:mx-auto rounded-xl mb-20 m-2 flex flex-col justify-center md:mt-10 min-h-100 bg-white pb-20"
         >
           <NavBar />
 
           {!weatherData && !error && (
             <form
               onSubmit={handleLocationSubmit}
-              className="flex flex-col items-center my-6"
+              className="flex flex-col items-center md:my-6 mt-20"
             >
               <input
                 type="text"
@@ -92,15 +92,15 @@ export default function Home() {
 
           {weatherData ? (
             <div>
-              <h1 className="mt-14 md:mt-3 text-3xl font-bold text-center">
+              <h1 className="mt-19 md:mt-3 text-xl md:text-3xl font-bold text-center ">
                 Weather Alerts for {location}
               </h1>
-              <div className="flex justify-around mt-4">
-                <div className="flex flex-col ml-10">
-                  <h1 className="text-[20px]">Now</h1>
-                  <div className="w-100">
-                    <div className="flex items-center">
-                      <div className="flex justify-start ml-5">
+              <div className="flex justify-center items-center md:justify-around mt-4 flex-col">
+                <div className="flex flex-col md:ml-10 mx-auto">
+                  <h1 className="text-[20px] ml-10 md:ml-0">Now</h1>
+                  <div className="md:w-100 ">
+                    <div className="flex items-center px-10 md:flex-row justify-center">
+                      <div className="flex justify-start ml-5 ">
                         <h1 className="text-[100px] font-bold m-0 p-0 mt-[-30px]">
                           {weatherData?.current?.temperature != null
                             ? weatherData.current.temperature.toFixed(1)
@@ -114,7 +114,7 @@ export default function Home() {
                         alt="weather icon"
                       />
                     </div>
-                    <div className="flex justify-around">
+                    <div className="flex justify-around flex-col md:flex-row items-center justify-center mx-auto">
                       <h1 className="text-xl font-bold ">
                         Conditions: {weatherData.current.condition}
                       </h1>
@@ -141,8 +141,8 @@ export default function Home() {
                 </div>
               </div>
 
-              <h1 className="text-4xl font-bold mx-20 mt-10">Predictive Insights</h1>
-              <div className="flex flex-col gap-6 mx-20 mt-6">
+              <h1 className="text-4xl font-bold md:mx-20 text-center mt-10">Predictive Insights</h1>
+              <div className="flex flex-col gap-6 md:mx-20 mx-10 mt-6">
                 {weatherData.forecast.map((forecastMsg, idx) => (
                   <div
                     key={idx}

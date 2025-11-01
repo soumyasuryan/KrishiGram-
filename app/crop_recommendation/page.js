@@ -1,6 +1,7 @@
 "use client"
 import Image from "next/image";
 import NavBar from "../components/navbar2";
+import Footer from "../components/footer";
 import { useState } from "react";
 
 export default function Home() {
@@ -35,17 +36,17 @@ export default function Home() {
     return (
         <div className="component-container w-[100%] min-h-screen" id="component-weather">
 
-            <div id="" className=" pb-10 w-220 flex flex-col iteme-center justify-center mx-auto">
+            <div id="" className=" pb-10 md:w-220 flex flex-col iteme-center justify-center mx-auto">
 
-                <div id="crop_rec_container" className="w-200 shadow-2xl h-auto mx-auto rounded-xl mb-20 flex flex-col justify-center mt-10 bg-white">
+                <div id="crop_rec_container" className="md:w-200 shadow-2xl h-auto md:mx-auto rounded-xl mb-20 flex flex-col justify-center m-2 bg-white">
                     <NavBar></NavBar>
                     <form onSubmit={handleSubmit} className="flex justify-center flex-col">
 
-                        <h1 className="mt-14 md:mt-3 md:text-3xl text-[40px] font-bold text-center">Crop Recommendation</h1>
+                        <h1 className="mt-19 md:mt-3 md:text-3xl text-3xl md:text-[40px] font-bold text-center">Crop Recommendation</h1>
+                        <h1 className="text-[30px] md:text-[25px] font-bold text-center md:text-left md:ml-10">Soil Nutrients</h1>
                         <div className="flex justify-around items-center ">
-                            <div className="flex flex-col mt-5">
-                                <h1 className="text-[30px] md:text-[25px] font-bold">Soil Nutrients</h1>
-                                <div className="w-100 ">
+                            <div className="flex flex-col mt-5">     
+                                <div className="md:w-100 ">
                                     <div className="flex ">
                                         <h2 className=" text-[20px] md:text-lg mr-4 py-2">Nitrogen (N) :</h2>
                                         <input type="text" className="text-center ml-auto border-b-3 w-20 focus:outline-none focus:ring-0" />
@@ -62,35 +63,36 @@ export default function Home() {
                                 </div>
 
                             </div><div>
-                                <img src="crop_rec_1.svg" className="h-30" alt="" />
+                                <img src="crop_rec_1.svg" className="h-20 md:h-30" alt="" />
                             </div>
 
                         </div>
-
-                        <div className="flex justify-around items-center">
+                         <h1 className="text-[30px] md:text-[25px] font-bold text-center mt-10 md:text-left md:ml-10">Weather Condition</h1>
+   
+                        <div className="flex md:flex-row flex-col justify-around items-center">
                             <div>
                                 <img src="/crop_rec_3.png" className="h-30" alt="" />
                             </div>
-                            <div className="mt-6 flex justify-center flex-col items-center">
-                                <h1 className="text-[30px] md:text-[25px] font-bold">Weather Condition</h1>
+                            <div className="md:mt-6 flex justify-center flex-col items-center">
+                               
                                 <div className="w-auto mt-10">
                                     <div>
-                                        <div className="flex border-4 border-b-0 p-3 w-100">
+                                        <div className="flex border-4 border-b-0 p-3 md:w-100 mx-4">
                                             <h2 className=" text-[20px] md:text-lg mr-4">Temperature :</h2>
                                             <input type="text" className="text-center mr-9 border-b-3 w-20 focus:outline-none focus:ring-0 ml-auto" />
                                             <p>°C</p>
                                         </div>
-                                        <div className="flex border-4 p-3 border-b-0 w-100">
+                                        <div className="flex border-4 p-3 border-b-0 md:w-100 mx-4">
                                             <h2 className=" text-[20px] md:text-lg mr-4">Humidity :</h2>
                                             <input type="text" className="text-center mr-10 border-b-3 w-20 focus:outline-none focus:ring-0 ml-auto" />
                                             <p>%</p>
                                         </div>
-                                        <div className="flex border-4 p-3 w-100 border-b-0">
+                                        <div className="flex border-4 p-3 md:w-100 mx-4 border-b-0">
                                             <h2 className=" text-[20px] md:text-lg mr-4">pH :</h2>
                                             <input type="text" className="text-center mr-13 border-b-3 w-20 focus:outline-none focus:ring-0 ml-auto" />
                                             <p></p>
                                         </div>
-                                        <div className="flex border-4 p-3 w-100">
+                                        <div className="flex border-4 p-3 md:w-100 mx-4">
                                             <h2 className=" text-[20px] md:text-lg mr-4">Rainfall :</h2>
                                             <input type="text" className="text-center mr-6 border-b-3 w-20 focus:outline-none focus:ring-0 ml-auto" />
                                             <p>mm</p>
@@ -120,7 +122,7 @@ export default function Home() {
                 </div>
 
             </div>
-
+        <Footer></Footer>
         </div>
     );
 }

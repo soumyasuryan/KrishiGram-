@@ -2,7 +2,7 @@ import React from 'react';
 
 function Footer() {
   return (
-    <div className='h-30 flex flex-col items-center justify-center bg-gray-400/10  mt-20'>
+    <div className='h-30 flex flex-col items-center justify-center bg-gray-600 mt-25 mb-[-82px]'>
       <ul className='flex w-80 justify-between text-sm text-white'>
         <li className='cursor-pointer hover:undeline transition-all smooth duration-500 hover:underline'>Home</li>
         <li className='cursor-pointer hover:undeline transition-all smooth duration-500 hover:underline'>Features</li>

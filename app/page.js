@@ -1,7 +1,7 @@
 "use client"
 import Image from "next/image";
-import NavBar from "./components/navbar";
-import Footer from "./components/footer";
+import NavBar from "./components/navbar2";
+import Footer from "./components/footer2";
 
 export default function Home() {
   return (

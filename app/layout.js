@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import LenisProvider from "./components/LenisProvider"; // Adjust the path as needed
+import LenisProvider from "./components/LenisProvider"; // Adjust path if needed
+import ChatbotWidget from "./components/ChatbotWidget"; // Import your chatbot
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,6 +26,8 @@ export default function RootLayout({ children }) {
       >
         <LenisProvider>
           {children}
+          {/* Floating chatbot button */}
+          <ChatbotWidget />
         </LenisProvider>
       </body>
     </html>

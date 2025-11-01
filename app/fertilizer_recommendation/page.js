@@ -52,18 +52,18 @@ export default function Home() {
 
   return (
     <div className="component-container w-[100%] min-h-screen" id="component-weather">
-      <div className="pb-10 w-220 flex flex-col items-center justify-center mx-auto">
+      <div className="pb-10 md:w-220 w-auto flex flex-col items-center justify-center md:mx-auto mx-2">
         <div
           id="crop_rec_container"
-          className="w-200 shadow-2xl h-auto mx-auto rounded-xl mb-20 flex flex-col justify-center mt-10 bg-white px-8 pb-8"
+          className="md:w-200 w-auto shadow-2xl h-auto mx-auto rounded-xl mb-20 flex flex-col justify-center md:mt-10 mt-2 bg-white md:px-8 pb-8"
         >
           <NavBar />
           <form onSubmit={handleSubmit} className="flex flex-col space-y-6">
-            <h1 className="text-3xl font-bold text-center ">Fertilizer Recommendation</h1>
+            <h1 className="text-3xl font-bold text-center mt-15 md:mt-0 ">Fertilizer Recommendation</h1>
 
             <div>
-              <h2 className="font-semibold text-xl mb-2">Soil Nutrients</h2>
-              <div className="flex space-x-6">
+              <h2 className="font-semibold text-xl mb-2 text-center md:text-left">Soil Nutrients</h2>
+              <div className="flex items-center justify-center md:flex-row md:space-x-6 md:ml-10 w-80 md:w-auto mx-auto">
                 <div>
                   <label htmlFor="nitrogen">Nitrogen (N):</label>
                   <input
@@ -101,9 +101,9 @@ export default function Home() {
             </div>
 
             <div>
-              <h2 className="font-semibold text-xl mb-2">Weather Conditions</h2>
-              <div className="flex space-x-6 items-center">
-                <div>
+              <h2 className="font-semibold text-xl mb-2 ml-5 text-center md:text-left">Weather Conditions</h2>
+              <div className="flex flex-col md:flex-row md:flex-row md:space-x-6">
+                <div className="mx-auto">
                   <label htmlFor="temperature">Temperature (°C):</label>
                   <input
                     id="temperature"
@@ -114,7 +114,7 @@ export default function Home() {
                     className="focus:outline-none border-b-2 w-24 text-center"
                   />
                 </div>
-                <div>
+                <div className="mx-auto">
                   <label htmlFor="humidity">Humidity (%):</label>
                   <input
                     id="humidity"
@@ -127,7 +127,7 @@ export default function Home() {
                     max="100"
                   />
                 </div>
-                <div>
+                <div className="mx-auto">
                   <label htmlFor="rainfall">Rainfall (mm):</label>
                   <input
                     id="rainfall"
@@ -141,8 +141,8 @@ export default function Home() {
                 </div>
               </div>
             </div>
-           <div className="flex justify-between">
-            <div className="w-80 flex flex-col items-center justify-center">
+           <div className="flex justify-between flex-col md:flex-row items-center">
+            <div className="md:w-80 flex flex-col items-center justify-center">
               <label htmlFor="soil_type" className="font-semibold text-xl mb-1 block">
                 Soil Type
               </label>
@@ -150,7 +150,7 @@ export default function Home() {
                 id="soil_type"
                 name="soil_type"
                 required
-                className="border rounded p-2 w-full max-w-xs"
+                className="border rounded p-1.5 md:w-48 w-40 text-sm text-gray-700 focus:outline-none"
                 defaultValue=""
               >
                 <option value="" disabled>
@@ -172,7 +172,7 @@ export default function Home() {
                 id="crop_type"
                 name="crop_type"
                 required
-                className="border rounded p-2 w-full max-w-xs"
+                className="border rounded p-1.5 md:w-48 w-40 text-sm text-gray-700 focus:outline-none"
                 defaultValue=""
               >
                 <option value="" disabled>
@@ -190,7 +190,7 @@ export default function Home() {
             <button
               type="submit"
               disabled={loading}
-              className="bg-blue-600 text-white rounded px-6 py-3 hover:bg-blue-700 transition duration-200"
+              className="bg-blue-600 text-white rounded px-6 py-3 hover:bg-blue-700 transition duration-200 w-60 mx-auto"
             >
               {loading ? "Analyzing..." : "Analyze"}
             </button>
