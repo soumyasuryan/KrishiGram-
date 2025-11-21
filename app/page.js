@@ -72,7 +72,7 @@ export default function Home() {
           ))}
         </ul>
 
-        <ul className="flex xl:flex-row flex-col justify-center items-center xl:justify-around xl:w-280 m-auto">
+        <ul className="flex xl:flex-row flex-col justify-center items-center xl:justify-around xl:mb-20">
           {[
             {
               title: "Pest Detection",
