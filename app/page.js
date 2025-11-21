@@ -84,6 +84,11 @@ export default function Home() {
               img: "/market_price.png",
               link: "/market_price",
             },
+            {
+              title: "KrishiBot",
+              img: "/chatbot.png",
+              link: "/chatbot",
+            }
           ].map((item) => (
             <li
               key={item.title}

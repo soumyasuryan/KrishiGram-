@@ -118,7 +118,7 @@ const handleOptionClick = async (value, label) => {
   return (
     <div className="flex flex-col justify-center bg-gray-200 h-220 md:h-230">
       <NavBar />
-      <div className="text-center text-4xl font-bold my-4">KrishiGPT</div>
+      <div className="text-center text-4xl font-bold my-4">KrishiBot</div>
 
       <div className="md:w-300 mx-3 md:mx-auto p-5 bg-white shadow-xl rounded-2xl flex flex-col">
         {/* Chat Messages */}
