@@ -1,5 +1,6 @@
 "use client";
 import NavBar from "../components/navbar2";
+import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import { useState } from "react";
 
@@ -52,7 +53,8 @@ export default function Home() {
   };
 
   return (
-    <div className="component-container w-[100%] min-h-screen" id="component-weather">
+    <div className="component-container w-[100%] min-h-screen pt-20" id="component-weather">
+      <Navbar></Navbar>
       <div className="pb-10 md:w-220 w-auto flex flex-col items-center justify-center md:mx-auto mx-2">
         <div
           id="crop_rec_container"

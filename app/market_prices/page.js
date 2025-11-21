@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import NavBar from "../components/navbar2";
+import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 
 export default function MarketPricePage() {
@@ -38,7 +39,8 @@ export default function MarketPricePage() {
 
   // 👇 Your return statement was outside the component before — now it’s fixed
   return (
-    <div className="flex flex-col min-h-screen bg-gray-100 justify-center mx-auto component-container" id="component-weather">
+    <div className="flex pt-20 flex-col min-h-screen bg-gray-100 justify-center mx-auto component-container" id="component-weather">
+      <Navbar></Navbar>
         <div className="md:w-200 shadow-2xl h-auto md:mx-auto rounded-xl mb-20 flex flex-col justify-center m-3 md:mt-10 bg-white px-8 pb-8" id="crop_rec_container">
       <NavBar />
       <main className="flex-grow flex flex-col items-center p-6">

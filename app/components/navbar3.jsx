@@ -11,8 +11,8 @@ function Navbar(props) {
   
 
   return (
-    <nav className="flex justify-center items-center ">
-      <ul className="flex sm:flex-row flex-col items-center justify-center w-full md:pb-5 mt-[-29px] md:mt-[-22px] px-5 md:pt-0 text-black h-10">
+    <nav className="flex justify-center items-center pt-20">
+      <ul className="flex sm:flex-row flex-col items-center justify-center w-full md:pb-5 mt-[-29px] md:mt-[-22px] px-5 md:pt-0 text-white h-10">
         {/* Hamburger and mobile dropdown container */}
         <li className="w-full relative">
           <ul className="flex justify-between mr-auto sm:w-40 items-center">
@@ -23,15 +23,15 @@ function Navbar(props) {
                 onClick={toggleDropdown}
                 aria-label="Toggle menu"
               >
-                <img src="/hamburger2.svg" alt="Menu icon" className="h-10" />
+                <img src="/hamburger.svg" alt="Menu icon" className="h-10" />
               </button>
             </li>
-            <img src="/web_logo2.svg" alt="Logo" className="w-24 sm:w-34" />
+            <img src="/web_logo.svg" alt="Logo" className="w-24 sm:w-34" />
 
             <li className="sm:invisible">
               <a href="#">
                 <img
-                  src="/contact_icon2.svg"
+                  src="/contact_icon.svg"
                   className="h-10 sm:invisible"
                   alt="Contact Icon"
                 />

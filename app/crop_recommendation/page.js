@@ -1,6 +1,7 @@
 "use client"
 import Image from "next/image";
-import NavBar from "../components/navbar2";
+import NavBar from "../components/navbar";
+import Navbar from "../components/navbar2";
 import Footer from "../components/footer";
 import { useState } from "react";
 
@@ -34,12 +35,13 @@ export default function Home() {
 
     };
     return (
-        <div className="component-container w-[100%] min-h-screen" id="component-weather">
-
+        <div className="component-container w-[100%] min-h-screen pt-20" id="component-weather">
+             <NavBar ></NavBar>
             <div id="" className=" pb-10 md:w-220 flex flex-col iteme-center justify-center mx-auto">
-
+             
                 <div id="crop_rec_container" className="md:w-200 shadow-2xl h-auto md:mx-auto rounded-xl mb-20 flex flex-col justify-center m-2 bg-white">
-                    <NavBar></NavBar>
+                    <Navbar title="Crop Recommendation"></Navbar>
+                    
                     <form onSubmit={handleSubmit} className="flex justify-center flex-col">
 
                         <h1 className="mt-19 md:mt-3 md:text-3xl text-3xl md:text-[40px] font-bold text-center">Crop Recommendation</h1>
