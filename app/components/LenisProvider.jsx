@@ -1,7 +1,7 @@
 // app/components/LenisProvider.jsx
 "use client";
 import { useEffect, useRef } from "react";
-import Lenis from "@studio-freight/lenis";
+import Lenis from "lenis";
 
 export default function LenisProvider({ children }) {
   const lenisRef = useRef(null);
