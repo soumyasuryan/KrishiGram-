@@ -47,6 +47,7 @@ export default function Chatbot() {
 
       const data = await res.json();
       setMessages([...newMessages, { sender: "bot", text: data.bot }]);
+      
 
       // Check if backend sent options
       if (data.options) {
@@ -62,6 +63,8 @@ export default function Chatbot() {
         { sender: "bot", text: "⚠️ Server error. Please try again later." },
       ]);
     }
+    
+  console.log("BOT RAW:", data);
   };
 
   // Handle option click
@@ -113,8 +116,7 @@ export default function Chatbot() {
       e.preventDefault();
       sendMessage();
     }
-  };
-  console.log("BOT RAW:", data);
+  }
 
   return (
     <div className="flex flex-col justify-center bg-gray-200 h-220 md:h-230">
