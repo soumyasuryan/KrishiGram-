@@ -62,7 +62,7 @@ export default function Home() {
         >
           <NavBar />
           <form onSubmit={handleSubmit} className="flex flex-col space-y-6">
-            <h1 className="text-3xl font-bold text-center mt-15 md:mt-0 ">Fertilizer Recommendation</h1>
+            <h1 className="text-3xl font-bold text-center mt-15 md:mt-0 text-green-700">🌿Fertilizer Recommendation</h1>
 
             <div>
               <h2 className="font-semibold text-xl mb-2 text-center md:text-left">Soil Nutrients</h2>

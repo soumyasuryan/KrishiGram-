@@ -17,7 +17,7 @@ export default function MarketPricePage() {
     setData(null);
 
     try {
-      const res = await fetch("https://krishigrambackend.onrender.com/market_price", {
+      const res = await fetch("https://krishigrambackend.onrender.com//market_price", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ commodity, location }),
