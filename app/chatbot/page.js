@@ -77,7 +77,7 @@ const handleOptionClick = async (value, label) => {
   setMessages(newMessages);
 
   try {
-    const res = await fetch("http://127.0.0.1:8080/chatbot", {
+    const res = await fetch("https://krishigrambackend.onrender.com/chatbot", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

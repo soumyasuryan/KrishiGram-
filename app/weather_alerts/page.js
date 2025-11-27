@@ -23,7 +23,7 @@ export default function Home() {
     setWeatherData(null);
     try {
       const response = await fetch(
-        `http://localhost:8080/weather?city=${encodeURIComponent(location)}`
+        `https://krishigrambackend.onrender.com/weather?city=${encodeURIComponent(location)}`
       );
       console.log(response);
       if (!response.ok) throw new Error("Failed to fetch weather data");
