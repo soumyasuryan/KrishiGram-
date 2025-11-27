@@ -47,6 +47,7 @@ export default function Chatbot() {
 
       const data = await res.json();
       setMessages([...newMessages, { sender: "bot", text: data.bot }]);
+       console.log("BOT RAW:", data);
       
 
       // Check if backend sent options
@@ -64,7 +65,7 @@ export default function Chatbot() {
       ]);
     }
     
-  console.log("BOT RAW:", data);
+ 
   };
 
   // Handle option click
