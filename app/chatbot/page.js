@@ -66,45 +66,45 @@ export default function Chatbot() {
 
   // Handle option click
   // Handle option click
-const handleOptionClick = async (value, label) => {
-  setOptions([]);
-  setInputDisabled(false);
+  const handleOptionClick = async (value, label) => {
+    setOptions([]);
+    setInputDisabled(false);
 
-  const newMessages = [
-    ...messages,
-    { sender: "user", text: label },
-  ];
-  setMessages(newMessages);
+    const newMessages = [
+      ...messages,
+      { sender: "user", text: label },
+    ];
+    setMessages(newMessages);
 
-  try {
-    const res = await fetch("https://krishigrambackend.onrender.com/chatbot", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        message: label,   // ✅ Send label as message
-        intent: value,    // ✅ Include intent value
-        user_id: "user123"
-      }),
-    });
+    try {
+      const res = await fetch("https://krishigrambackend.onrender.com/chatbot", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          message: label,   // ✅ Send label as message
+          intent: value,    // ✅ Include intent value
+          user_id: "user123"
+        }),
+      });
 
-    const data = await res.json();
-    setMessages([...newMessages, { sender: "bot", text: data.bot }]);
+      const data = await res.json();
+      setMessages([...newMessages, { sender: "bot", text: data.bot }]);
 
-    // ✅ Handle next step: if backend returns options again
-    if (data.options) {
-      setOptions(data.options);
-      setInputDisabled(true);
-    } else {
-      setOptions([]);
-      setInputDisabled(false);
+      // ✅ Handle next step: if backend returns options again
+      if (data.options) {
+        setOptions(data.options);
+        setInputDisabled(true);
+      } else {
+        setOptions([]);
+        setInputDisabled(false);
+      }
+    } catch (error) {
+      setMessages([
+        ...newMessages,
+        { sender: "bot", text: "⚠️ Server error. Please try again later." },
+      ]);
     }
-  } catch (error) {
-    setMessages([
-      ...newMessages,
-      { sender: "bot", text: "⚠️ Server error. Please try again later." },
-    ]);
-  }
-};
+  };
 
 
 
@@ -133,11 +133,18 @@ const handleOptionClick = async (value, label) => {
               <div key={i} className="flex flex-col">
                 <div
                   className={`${m.sender === "user"
-                      ? "text-right text-green-700"
-                      : "text-left text-gray-800 bg-gray-200 p-2 rounded-lg inline-block"
+                    ? "text-right text-green-700"
+                    : "text-left text-gray-800 bg-gray-200 p-2 rounded-lg inline-block"
                     }`}
                 >
-                  {m.text}
+                  <div
+                    className={`${m.sender === "user"
+                      ? "text-right text-green-700"
+                      : "text-left text-gray-800 bg-gray-200 p-2 rounded-lg inline-block"
+                      }`}
+                    dangerouslySetInnerHTML={{ __html: m.text }}
+                  />
+
                 </div>
               </div>
             ))
