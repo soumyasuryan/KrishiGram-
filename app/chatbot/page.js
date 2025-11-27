@@ -114,6 +114,7 @@ export default function Chatbot() {
       sendMessage();
     }
   };
+  console.log("BOT RAW:", data);
 
   return (
     <div className="flex flex-col justify-center bg-gray-200 h-220 md:h-230">
