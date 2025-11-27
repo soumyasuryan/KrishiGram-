@@ -19,7 +19,13 @@ export default function Home() {
       <NavBar />
       <div className="w-[70%] mx-auto my-20 min-h-[60%]">
         {loaded ? (
-          <gradio-app src="https://soumyasuryan-disease-predictor.hf.space/" />
+          <iframe
+	src="https://soumyasuryan-disease-predictor.hf.space"
+	frameborder="0"
+	width="850"
+	height="450"
+></iframe>
+
         ) : (
           <div className="text-center">Loading chatbot...</div>
         )}
